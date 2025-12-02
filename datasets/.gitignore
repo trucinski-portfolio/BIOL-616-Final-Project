@@ -1,0 +1,4 @@
+inputs/TCGA.BRCA.sampleMap%2FHiSeqV2_PANCAN.gz
+inputs/TCGA.BRCA.sampleMap%2FBRCA_clinicalMatrix
+
+outputs/
