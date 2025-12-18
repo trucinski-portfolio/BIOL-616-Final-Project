@@ -4,3 +4,6 @@
 
 # local R library (do not track)
 Rlibs/
+
+#jupyter notebook checkpoints
+.ipynb_checkpoints/
