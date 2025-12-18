@@ -33,6 +33,12 @@ The workflow is structured as three main stages:
 ### 0) Clone and move to repo root
 Run everything from the repository root (the folder containing README.md, scripts/, and data/).
 
+The pipeline relies on:
+	•	scripts/config/ for centralized path definitions and directory setup
+	•	scripts/setup/ for helper scripts documenting external data requirements
+
+No manual configuration is required beyond placing the expected data files in the correct locations.
+
 ### 1) Preprocessing (Python)
 Run scripts/01_preprocessing.ipynb to produce:
 
