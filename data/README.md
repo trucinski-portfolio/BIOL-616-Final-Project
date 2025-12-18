@@ -146,7 +146,6 @@ results/
     ├── DEG_Results_LumA_IDC_Tumor_vs_AllNormals_annotated.csv
     ├── ORA_gene_list.csv
     └── GSEA_ALL_summary_LumA_IDC_Tumor_vs_AllNormals.csv
-
 These outputs are fully reproducible given the required raw data and GSEA outputs.
 
 ---
