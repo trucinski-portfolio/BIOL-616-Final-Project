@@ -128,32 +128,47 @@ Execute notebooks in order:
 After running the full pipeline, the following key outputs are produced:
 
 ### Preprocessing outputs (Script 01)
-`data/processed/preprocessing_outputs/`
-`├── expr_LumA_IDC_Tumor_vs_AllNormals.tsv`
-`└── metadata_LumA_IDC_Tumor_vs_AllNormals.tsv`
-
+```text
+data/processed/preprocessing_outputs/
+├── expr_LumA_IDC_Tumor_vs_AllNormals.tsv
+└── metadata_LumA_IDC_Tumor_vs_AllNormals.tsv
+```
 These files define the **final cohort and expression matrix** used in all downstream analyses.
 
 ---
 
-### Differential expression results (Script 02)
-`results/tables/deg/`
-`├── DEG_Results_LumA_IDC_Tumor_vs_AllNormals_limma.csv`
-`└── DEG_Results_LumA_IDC_Tumor_vs_AllNormals_limma_annotated.csv`
-
-`results/figures/deg/`
-`├── Top50_DEGs_Heatmap.pdf`
-`├── Top50_DEGs_Heatmap.png`
-`└── Volcano_LumA_IDC_Tumor_vs_AllNormals.png`
+### Differential expression analysis (Script 02)
+```text
+results/
+├── figures
+│   ├── deg
+│   │   ├── Top50_DEGs_Heatmap.pdf
+│   │   ├── Top50_DEGs_Heatmap.png
+│   │   └── Volcano_LumA_IDC_Tumor_vs_AllNormals.png
+│   └── gsea
+│       ├── GSEA_Waterfall_Hallmark.png
+│       ├── GSEA_Waterfall_KEGG_Legacy.png
+│       └── GSEA_Waterfall_KEGG_Medicus.png
+└── tables
+    ├── deg
+    │   ├── DEG_Results_LumA_IDC_Tumor_vs_AllNormals_limma_annotated.csv
+    │   └── DEG_Results_LumA_IDC_Tumor_vs_AllNormals_limma.csv
+    └── gsea
+        ├── GSEA_ALL_summary_LumA_IDC_Tumor_vs_AllNormals.csv
+        └── LumA_IDC_Tumor_vs_AllNormals.rnk
 
 Differential expression is performed using **limma-trend**, and the ranked list for GSEA is derived from **limma t-statistics**.
-
+```
 ---
 
 ### Pathway enrichment summaries and figures (Script 03)
-`results/tables/gsea/`
-`└── GSEA_ALL_summary_LumA_IDC_Tumor_vs_AllNormals.csv`
-
+text```
+results/
+└── tables
+	└── gsea
+        ├── GSEA_ALL_summary_LumA_IDC_Tumor_vs_AllNormals.csv
+        └── LumA_IDC_Tumor_vs_AllNormals.rnk
+```
 This table merges positive and negative enrichment results across all gene set libraries and reports:
 	•	Normalized Enrichment Score (NES)
 	•	Enrichment direction (Up_in_Tumor / Down_in_Tumor)
@@ -161,16 +176,18 @@ This table merges positive and negative enrichment results across all gene set l
 
 Results are sorted by absolute enrichment strength.
 
-`results/figures/gsea/`
-`├── GSEA_Waterfall_Hallmark.png`
-`├── GSEA_Waterfall_KEGG_Legacy.png`
-`└── GSEA_Waterfall_KEGG_Medicus.png`
+results/
+└── figures
+	└── gsea
+		├── GSEA_Waterfall_Hallmark.png
+        ├── GSEA_Waterfall_KEGG_Legacy.png
+        └── GSEA_Waterfall_KEGG_Medicus.png
 
 Each waterfall plot visualizes the top enriched pathways per library, ranked by NES, and colored by direction of enrichment in tumor tissue.
 
 These outputs summarize differential gene expression and pathway enrichment across multiple gene set libraries
 (Hallmark, KEGG Legacy, KEGG Medicus) and provide a comparative view of proliferation, DNA repair, proteostasis, and signaling programs active in Luminal A IDC.
-
+```
 ---
 
 ## GSEA Preranked (external step)
