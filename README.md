@@ -41,42 +41,45 @@ The pipeline emphasizes:
 ---
 
 ## Repo structure
-`scripts/`
-`├── setup/`
-`│   ├── setup_python.sh`          # creates .venv, installs Python deps, registers kernel
-`│   ├── download_xena_inputs.sh`  # downloads TCGA inputs from UCSC Xena
-`│   ├── prepare_xena_inputs.sh`   # validates required input files
-`│   ├── setup_r.R`                # installs R dependencies (renv-aware)
-`│   └── r_bootstrap.R`            # notebook-safe R bootstrap helper
-`│`
-`├── config/`                      # centralized path conventions (Python)
-`│`
-`notebooks/`
-`├── 01_preprocessing.ipynb`
-`├── 02_deg_analysis_gsea_ranking.ipynb`
-`└── 03_deg_gsea_visualization.ipynb`
-`│`
-`data/`
-`├── raw/preprocessing_inputs/`    # downloaded Xena inputs (not tracked)
-`├── processed/preprocessing_outputs/`
-`└── GSEA_output/`                 # GSEA pos/neg TSVs (per gene set library)
-`│`
-`results/`
-`├── tables/`                      # DEG + GSEA summary tables
-`└── figures/`                     # volcano, heatmap, GSEA plots
-`│`
-`env/`
-`├── requirements_python.txt`      # Python dependencies
-`│`
-`renv/`                            # renv-managed R library
-`renv.lock`                        # locked R dependencies
-`README.md`
+
+```text
+scripts/
+├── setup/
+│   ├── setup_python.sh          # creates .venv, installs Python deps, registers kernel
+│   ├── download_xena_inputs.sh  # downloads TCGA inputs from UCSC Xena
+│   ├── prepare_xena_inputs.sh   # validates required input files
+│   ├── setup_r.R                # installs R dependencies (renv-aware)
+│   └── r_bootstrap.R            # notebook-safe R bootstrap helper
+│
+├── config/
+│   └── project_paths.py         # centralized path conventions (Python)
+│
+├── notebooks/
+│   ├── 01_preprocessing.ipynb
+│   ├── 02_deg_analysis_gsea_ranking.ipynb
+│   └── 03_deg_gsea_visualization.ipynb
+│
+data/
+├── raw/preprocessing_inputs/    # downloaded Xena inputs (not tracked)
+├── processed/preprocessing_outputs/
+└── GSEA_output/                 # GSEA pos/neg TSVs (per gene set library)
+│
+results/
+├── tables/                      # DEG + GSEA summary tables
+└── figures/                     # volcano, heatmap, GSEA plots
+│
+env/
+├── requirements_python.txt      # Python dependencies
+│
+renv/                             # renv-managed R library
+renv.lock                         # locked R dependencies
+README.md
 
 ---
 
-## Quickstart 
+## Quickstart
 
-### 0) Clone and enter the repo
+### 0) Repository Setup
 ```bash
 git clone https://github.com/yourname/tcga-brca-luminalA-deg-gsea.git
 cd tcga-brca-luminalA-deg-gsea
