@@ -83,7 +83,7 @@ README.md
 ```bash
 git clone https://github.com/yourname/tcga-brca-luminalA-deg-gsea.git
 cd tcga-brca-luminalA-deg-gsea
-
+```
 This repo uses:
 - **Python** via a local virtual environment at `./.venv` (not committed)
 - **R** via `renv` with a committed lockfile (`renv.lock`)
@@ -98,7 +98,7 @@ This will:
 	•	Create .venv/
 	•	Install Python dependencies
 	•	Register a Jupyter kernel for the project
-
+```
 ### 2) R Environment Setup
 
 ```bash
@@ -107,13 +107,13 @@ install.packages("renv")
 renv::restore()
 
 This restores the exact R environment defined in renv.lock.
-
+```
 ### 3) Download TCGA Xena Inputs
 
 ```bash
 bash scripts/setup/download_xena_inputs.sh
 bash scripts/setup/prepare_xena_inputs.sh
-
+```
 ### 4) Run the analysis pipeline
 
 Execute notebooks in order:
